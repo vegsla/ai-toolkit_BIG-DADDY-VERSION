@@ -44,8 +44,9 @@ RUN git clone --depth 1 --branch "${AITK_REF}" "${AITK_REPO}" /app/ai-toolkit
 
 WORKDIR /app/ai-toolkit
 
-RUN python -m pip install --no-cache-dir torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126 \
-    && python -m pip install --no-cache-dir -r requirements.txt
+RUN python -m pip install --no-cache-dir torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126
+
+RUN python -m pip install --no-cache-dir -r requirements.txt --no-deps
 
 WORKDIR /app/ai-toolkit/ui
 RUN npm install \
