@@ -50,9 +50,7 @@ RUN python -m pip install --no-cache-dir \
     torchaudio==2.7.0 \
     --index-url https://download.pytorch.org/whl/cu126
 
-RUN python -m pip freeze | grep -Ei '^(torch|torchvision|torchaudio|triton|nvidia-|cuda-|sympy|mpmath|networkx|filelock|fsspec|jinja2|typing_extensions)==' > /tmp/torch-constraints.txt \
-    && cat /tmp/torch-constraints.txt \
-    && python -m pip install --no-cache-dir --prefer-binary -c /tmp/torch-constraints.txt -r requirements.txt \
+RUN python -m pip install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt \
     && python -m pip check
 
 WORKDIR /app/ai-toolkit/ui
