@@ -54,7 +54,7 @@ RUN python -m pip install --no-cache-dir --use-deprecated=legacy-resolver -r req
     && python -m pip check
 
 WORKDIR /app/ai-toolkit/ui
-RUN npm install \
+RUN npm ci \
     && npm run build \
     && npm run update_db
 
