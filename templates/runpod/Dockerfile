@@ -6,7 +6,7 @@ ENV PIP_NO_CACHE_DIR=1
 ENV VENV_PATH=/opt/venv
 ENV PATH="/opt/venv/bin:${PATH}"
 
-ARG AITK_REPO=https://github.com/ArtDesignAwesome/ai-toolkit_BIG-DADDY-VERSION.git
+ARG AITK_REPO=https://github.com/vegsla/ai-toolkit_BIG-DADDY-VERSION.git
 ARG AITK_REF=main
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
