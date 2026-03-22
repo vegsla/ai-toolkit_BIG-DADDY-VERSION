@@ -82,6 +82,12 @@ maybe_update_repo() {
   npm run update_db
 }
 
+ensure_database_ready() {
+  cd "${APP_DIR}/ui"
+  echo "Ensuring database schema is up to date..."
+  npm run update_db
+}
+
 start_ui() {
   cd "${APP_DIR}/ui"
   echo "Starting AI Toolkit UI on port 8675..."
@@ -93,4 +99,5 @@ setup_ssh
 export_env_vars
 init_persistent_storage
 maybe_update_repo
+ensure_database_ready
 start_ui
