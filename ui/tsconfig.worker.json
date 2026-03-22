@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2020",
@@ -7,7 +8,9 @@
     "moduleResolution": "node",
     "types": ["node"],
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
+    "incremental": false
   },
-  "include": ["cron/**/*.ts", "src/**/*.ts"]
+  "include": ["cron/worker.ts"]
 }
