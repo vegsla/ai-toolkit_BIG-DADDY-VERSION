@@ -2,15 +2,12 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2020",
-    "outDir": "dist/cron",
-    "rootDir": "cron",
+    "outDir": "dist",
+    "rootDir": ".",
     "moduleResolution": "node",
     "types": ["node"],
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@/*": ["./cron/*"]
-    }
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["cron/**/*.ts"]
+  "include": ["cron/**/*.ts", "src/**/*.ts"]
 }
