@@ -1,3 +1,7 @@
+numpy==1.26.4
+protobuf==6.31.1
+huggingface_hub==0.36.0
+
 torchao==0.10.0
 ltx-core @ git+https://github.com/Lightricks/LTX-2.git@9e8a28e17ac4dd9e49695223d50753a1ebda36fe#subdirectory=packages/ltx-core ; python_version >= "3.10"
 safetensors
@@ -29,7 +33,6 @@ lpips
 pytorch_fid
 optimum-quanto==0.2.4
 sentencepiece
-huggingface_hub
 peft
 gradio
 python-slugify
