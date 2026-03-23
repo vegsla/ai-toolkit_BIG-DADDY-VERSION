@@ -348,8 +348,13 @@ class LTX2Model(BaseModel):
 
     @staticmethod
     def _is_ltx23_combined_checkpoint(model_path: str, combined_model_path: Optional[str]) -> bool:
-        candidates = [model_path or "", combined_model_path or ""]
-        return any("ltx-2.3" in candidate.lower() for candidate in candidates)
+    candidates = [str(model_path or "").lower(), str(combined_model_path or "").lower()]
+    official_markers = [
+        "lightricks/ltx-2.3",
+        "ltx-2.3-22b-dev.safetensors",
+        "ltx-2.3-22b-dev-fp8.safetensors",
+    ]
+    return any(any(marker in candidate for marker in official_markers) for candidate in candidates)
 
     def _make_ltx23_helper_transformer(self):
         config, _, _ = get_ltx2_transformer_config()
